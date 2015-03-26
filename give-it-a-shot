@@ -1,0 +1,23 @@
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+template_root=`pwd`
+popd > /dev/null
+template="${template_root}/rails-app-template.rb"
+railsrc="${template_root}/railsrc"
+
+test_app="test-app"
+
+cd tmp
+if [ -d "${test_app}" ] ; then
+  pushd "${test_app}"
+  bundle exec rake db:drop
+  bundle exec spring stop
+  popd
+fi
+
+rm -rf "${test_app}"
+rails new "${test_app}" -m "${template}" --rc="${railsrc}"
+
+cd "${test_app}"
+bin/guard
