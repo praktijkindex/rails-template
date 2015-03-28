@@ -30,6 +30,10 @@ AppTemplate.new do
     append_to ".gitignore", "/vendor/assets/bower_components"
   end
 
+  commit "Nederlands als eerste taal" do
+    application "config.i18n.default_locale = :nl"
+  end
+
   commit "Rspec setup" do
     generate "rspec:install"
   end
