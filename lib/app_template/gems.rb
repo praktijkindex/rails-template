@@ -16,6 +16,8 @@ gem "jquery-rails"
     gem "slim-rails"
     # authentication
     gem "devise"
+    # add 'active' CSS class to current links
+    gem "active_link_to"
 
 gem_group :development do
   # useful error pages in development server
