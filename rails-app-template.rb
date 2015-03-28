@@ -39,6 +39,7 @@ AppTemplate.new do
 
   commit "Nederlands als eerste taal" do
     application "config.i18n.default_locale = :nl"
+    application %Q[config.time_zone = "Amsterdam"]
   end
 
   commit "Rspec setup" do
