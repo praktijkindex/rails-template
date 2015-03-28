@@ -20,6 +20,7 @@ AppTemplate.new do
       app/views/layouts/application.html.erb
       app/helpers/application_helper.rb
       config/locales/en.yml
+      db/seeds.rb
     ]
     copy_files File.expand_path("../files", __FILE__)
     run "ln -s config/Guardfile ."
@@ -49,6 +50,7 @@ AppTemplate.new do
     generate "devise User"
     rake "db:create"
     rake "db:migrate"
+    rake "db:seed"
     route "devise_for :users"
   end
 
