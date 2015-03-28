@@ -23,6 +23,12 @@ class AppTemplate
     end
   end
 
+  def delete_files file_list
+    file_list.each do |path|
+      run "rm #{path}"
+    end
+  end
+
   def append_to path, text
     open path, "a+" do |file|
       file.puts text

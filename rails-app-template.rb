@@ -15,9 +15,12 @@ AppTemplate.new do
   end
 
   commit "Copy template files" do
-    run "rm README.rdoc"
-    run "rm app/views/layouts/application.html.erb"
-    run "rm app/helpers/application_helper.rb"
+    delete_files %w[
+      README.rdoc
+      app/views/layouts/application.html.erb
+      app/helpers/application_helper.rb
+      config/locales/en.yml
+    ]
     copy_files File.expand_path("../files", __FILE__)
     run "ln -s config/Guardfile ."
     run "mv Gemfile config/"
