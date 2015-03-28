@@ -1,0 +1,19 @@
+.authform
+  .panel.panel-default
+    .panel-heading
+      | Aanmelden
+    .panel-body
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
+        = devise_error_messages!
+        .form-group
+          = f.label :email
+          = f.email_field :email, :autofocus => true, class: 'form-control'
+        .form-group
+          = link_to "Wachtwoord vergeten?", new_password_path(resource_name), class: 'pull-right'
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        = f.submit 'Aanmelden', :class => 'btn btn-default pull-right'
+        .checkbox[style="width:150px"]
+          label
+            = f.check_box :remember_me
+            | Aangemeld blijven

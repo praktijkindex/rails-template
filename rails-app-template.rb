@@ -34,16 +34,11 @@ AppTemplate.new do
     generate "rspec:install"
   end
 
-  commit "Rough application layout" do
-    generate "layout:install", "bootstrap3"
-  end
-
   commit "Devise setup" do
     generate "devise:install"
     generate "devise User"
     rake "db:create"
     rake "db:migrate"
-    generate "layout:devise", "bootstrap3"
     route "devise_for :users"
   end
 

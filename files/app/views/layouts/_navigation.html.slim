@@ -1,0 +1,17 @@
+/ navigation styled for Bootstrap 3.0
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .navbar-brand
+        i.glyphicon.glyphicon-cog>
+        | Reflex pult
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        == render 'layouts/navigation_links'
+      ul.nav.navbar-nav.navbar-right
+        li = link_to("Afmelden", destroy_user_session_path, :method => :delete)

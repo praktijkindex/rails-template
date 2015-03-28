@@ -2,7 +2,7 @@
 # ------------
 # jquery and jquery-ujs are simpler to get as a gem than via bower
 # by using --skip-javascript we avoid CoffeScript dependency and
-# application.js generation (which will be performed by rails_layout gem)
+# application.js generation
 gem "jquery-rails"
     # idem ditto
     gem "turbolinks"
@@ -34,8 +34,6 @@ gem_group :development do
   gem "rack-livereload"
   # mutes assets pipeline log messages
   gem "quiet_assets"
-  # pretty views generators using frameworks (e.g. bootstrap)
-  gem "rails_layout"
   # rspec support for spring application preloader
   gem "spring-commands-rspec", require: false
   # better console
